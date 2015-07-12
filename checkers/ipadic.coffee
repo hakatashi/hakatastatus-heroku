@@ -1,6 +1,6 @@
 module.exports = (twitter, done) ->
   twitter.get 'hakatastatus', 'statuses/user_timeline',
-    screen_id: 'ipadic'
+    screen_name: 'ipadic'
   , (error, response, data) ->
     if error
       return done null, new Error 'Errored on accessing twitter'

@@ -1,0 +1,22 @@
+{
+  "name": "hakatastatus-heroku",
+  "version": "1.0.0",
+  "description": "Cron to monitor the services of hakatashi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakatashi/hakatastatus-heroku.git"
+  },
+  "keywords": [
+    "hakatashi"
+  ],
+  "author": "Koki Takahashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakatashi/hakatastatus-heroku/issues"
+  },
+  "homepage": "https://github.com/hakatashi/hakatastatus-heroku#readme"
+}

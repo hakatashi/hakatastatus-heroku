@@ -24,6 +24,8 @@ emoji = (status) ->
       '🆗' # Squared OK
       '⭕' # Heavy Large Circle
       '🙋' # Happy Person Raising One Hand
+      '😍' # Smiling Face With Heart-Shaped Eyes
+      '😊' # Smiling Face With Smiling Eyes
     ]
   else if status is 'failed'
     emojies = [
@@ -34,6 +36,8 @@ emoji = (status) ->
       '❌' # Cross Mark
       '🙎' # Person With Pouting Face
       '😡' # Pouting Face
+      '😱' # Face Screaming In Fear
+      '😵' # Dizzy Face
     ]
   else emojies = []
 

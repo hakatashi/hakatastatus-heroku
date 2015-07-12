@@ -9,8 +9,6 @@ module.exports = (twitter, done) ->
 
     lastCreate = new Date data[0]?.created_at
 
-    console.log 'Glyphwikibot: ' + JSON.stringify data
-
     # Check if the last tweet is posted after 1 hour ago
     if lastCreate < new Date() - 1 * 60 * 60 * 1000
       return done null, new Error 'Glyphwikibot is dead!'

@@ -9,8 +9,6 @@ module.exports = (twitter, done) ->
 
     lastCreate = new Date data[0]?.created_at
 
-    console.log 'ipadic: ' + JSON.stringify data
-
     # Check if the last tweet is posted after 30 mins ago
     if lastCreate < new Date() - 30 * 60 * 1000
       return done null, new Error 'ipadic bot is dead!'

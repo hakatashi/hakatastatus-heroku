@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/hakatashi/hakatastatus-heroku#readme",
   "devDependencies": {
+    "coffee-script": "^1.9.3",
     "request": "^2.58.0"
   }
 }

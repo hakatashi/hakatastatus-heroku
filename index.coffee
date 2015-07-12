@@ -14,7 +14,7 @@ tweet = (text) ->
     status: "[Status Report #{new Date().toLocaleString()}]\n#{text}"[...140]
 
 emoji = (status) ->
-  if status is 'succeed'
+  if status is 'success'
     emojies = [
       '✔️' # Heavy Check Mark
       '☑️' # Ballot Box With Check
@@ -25,7 +25,7 @@ emoji = (status) ->
       '⭕' # Heavy Large Circle
       '🙋' # Happy Person Raising One Hand
     ]
-  else status is 'failed'
+  else if status is 'failed'
     emojies = [
       '👎' # Thumbs Down Sign
       '🆖' # Squared NG
@@ -35,6 +35,7 @@ emoji = (status) ->
       '🙎' # Person With Pouting Face
       '😡' # Pouting Face
     ]
+  else emojies = []
 
   return emojies[Math.floor Math.random() * emojies.length]
 
@@ -45,7 +46,7 @@ async.map checkers, (checkerName, done) ->
   checker twitter, done
 , (error, statuses) ->
 
-  return tweet('@hakatashi Status Monitor crached!') if error
+  return tweet("@hakatashi Status Monitor crached! #{emoji 'failed'}") if error
 
   everythingIsOperatinal = yes
   for status, index in statuses
@@ -55,6 +56,6 @@ async.map checkers, (checkerName, done) ->
       everythingIsOperatinal = no
 
   if everythingIsOperatinal
-    tweet "#{emoji 'success'} Everything is operational!""
+    tweet "#{emoji 'success'} Everything is operational!"
 
   return

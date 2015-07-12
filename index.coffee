@@ -13,6 +13,31 @@ tweet = (text) ->
   twitter.post 'hakatastatus', 'statuses/update',
     status: "[Status Report #{new Date().toLocaleString()}]\n#{text}"[...140]
 
+emoji = (status) ->
+  if status is 'succeed'
+    emojies = [
+      '✔️' # Heavy Check Mark
+      '☑️' # Ballot Box With Check
+      '👌' # Ok Hand Sign
+      '🙆' # Face With OK Gesture
+      '👍' # Thumbs Up Sign
+      '🆗' # Squared OK
+      '⭕' # Heavy Large Circle
+      '🙋' # Happy Person Raising One Hand
+    ]
+  else status is 'failed'
+    emojies = [
+      '👎' # Thumbs Down Sign
+      '🆖' # Squared NG
+      '👊' # Fisted Hand Sign
+      '🙅' # Face With No Good Gesture
+      '❌' # Cross Mark
+      '🙎' # Person With Pouting Face
+      '😡' # Pouting Face
+    ]
+
+  return emojies[Math.floor Math.random() * emojies.length]
+
 checkers = ['glyphwikibot']
 
 async.map checkers, (checkerName, done) ->
@@ -26,10 +51,10 @@ async.map checkers, (checkerName, done) ->
   for status, index in statuses
     if status
       checker = checkers[index]
-      tweet "#{checker}: @hakatashi #{status.message}"
+      tweet "#{emoji 'failed'}#{checker}: @hakatashi #{status.message}"
       everythingIsOperatinal = no
 
   if everythingIsOperatinal
-    tweet 'Everything is operational!'
+    tweet "#{emoji 'success'} Everything is operational!""
 
   return

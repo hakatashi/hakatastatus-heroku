@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hakatashi/hakatastatus-heroku/issues"
   },
-  "homepage": "https://github.com/hakatashi/hakatastatus-heroku#readme"
+  "homepage": "https://github.com/hakatashi/hakatastatus-heroku#readme",
+  "devDependencies": {
+    "request": "^2.58.0"
+  }
 }

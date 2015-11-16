@@ -2,6 +2,9 @@
   "name": "hakatastatus-heroku",
   "version": "1.0.0",
   "description": "Cron to monitor the services of hakatashi",
+  "engines": {
+    "node": "~4.2.1"
+  },
   "main": "index.js",
   "scripts": {
     "start": "coffee index.coffee",

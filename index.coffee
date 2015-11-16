@@ -10,6 +10,7 @@ twitter = new Twitter
       oauth_token_secret: process.env.OAUTH_TOKEN_SECRET
 
 tweet = (text) ->
+  console.log "Tweet: #{text}"
   twitter.post 'hakatastatus', 'statuses/update',
     status: "[Status Report #{new Date().toLocaleString()}]\n#{text}"[...140]
 

@@ -9,12 +9,11 @@ module.exports = (twitter, done) ->
 
       now = moment.tz Date.now(), 'Asia/Tokyo'
       todayMeanTime = now.clone().startOf('day').add 23, 'hours'
-      yesterdayMeanTime = todayMeanTime.clone().subtract 1, 'day'
 
       if todayMeanTime < now
-        meanTime = todayMeanTime
+        meanTime = now.clone().startOf('day').add 18, 'hours'
       else
-        meanTime = yesterdayMeanTime
+        meanTime = now.clone().startOf('day').substruct 6, 'hours'
 
       latestUpdate = data.feed?.entry?[0]?.updated?[0]
       if latestUpdate is undefined then return done null, new Error "Latest entry not found"

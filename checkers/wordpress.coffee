@@ -13,7 +13,7 @@ module.exports = (twitter, done) ->
       if todayMeanTime < now
         meanTime = now.clone().startOf('day').add 18, 'hours'
       else
-        meanTime = now.clone().startOf('day').substruct 6, 'hours'
+        meanTime = now.clone().startOf('day').subtract 6, 'hours'
 
       latestUpdate = data.feed?.entry?[0]?.updated?[0]
       if latestUpdate is undefined then return done null, new Error "Latest entry not found"

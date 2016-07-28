@@ -44,7 +44,7 @@ emoji = (status) ->
 
   return emojies[Math.floor Math.random() * emojies.length]
 
-checkers = ['glyphwikibot', 'ipadic', 'nada', 'anime', 'wordpress']
+checkers = ['glyphwikibot', 'ipadic', 'nada', 'anime']
 
 async.map checkers, (checkerName, done) ->
   checker = require "./checkers/#{checkerName}"

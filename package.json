@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cron to monitor the services of hakatashi",
   "engines": {
-    "node": "~4.2.1"
+    "node": "~16.10.0"
   },
   "main": "index.js",
   "scripts": {
